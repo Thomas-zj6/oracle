@@ -1,4 +1,4 @@
-# 实验二：创建分区表
+# 实验三：创建分区表
 ## 卓进 201810414130 一班
 
 ## 实验目的
@@ -15,10 +15,10 @@
 
 ## 实验步骤
 
-### 在用户ZJ中创建表：orders（订单表）
+### 在用户new_user_zj中创建表：orders（订单表）
 ![](1.png)
 ![](2.png)
-### 在用户ZJ中创建表：order_details（订单详情表）
+### 在用户new_user_zj中创建表：order_details（订单详情表）
   CREATE TABLE order_details 
   (
   id NUMBER(10, 0) NOT NULL 
