@@ -80,7 +80,7 @@
   NO INMEMORY 
   NOPARALLEL;
 
-#建立orders_details_nospace表
+### 建立orders_details_nospace表
   CREATE TABLE ORDER_DETAILS_NOSPACE 
   (
     ID NUMBER(10, 0) NOT NULL 
