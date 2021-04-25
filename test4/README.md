@@ -22,7 +22,7 @@
 
 1.查询某个员工的信息
 - SELECT * FROM employees where NAME = '王总';
-- ![](./1.png)
+![](./1.png)
 2.递归查询某个员工及其所有下属，子下属员工。
 - WITH A (EMPLOYEE_ID,NAME,EMAIL,PHONE_NUMBER,HIRE_DATE,SALARY,MANAGER_ID,DEPARTMENT_ID) AS
   (SELECT EMPLOYEE_ID,NAME,EMAIL,PHONE_NUMBER,HIRE_DATE,SALARY,MANAGER_ID,DEPARTMENT_ID
@@ -31,27 +31,27 @@
   SELECT B.EMPLOYEE_ID,B.NAME,B.EMAIL,B.PHONE_NUMBER,B.HIRE_DATE,B.SALARY,B.MANAGER_ID,B.DEPARTMENT_ID
     FROM A, employees B WHERE A.EMPLOYEE_ID = B.MANAGER_ID)
 SELECT * FROM A;
-- ![](./2.png)
+![](./2.png)
 3.查询订单表，并且包括订单的订单应收货款: Trade_Receivable= sum(订单详单表.ProductNum*订单详单表.ProductPrice)- Discount。
 - select * FROM ORDERS
-- ![](./3.png)
+![](./3.png)
 4.查询订单详表，要求显示订单的客户名称和客户电话，产品类型用汉字描述。
 - select o.customer_name,o.customer_tel, p.product_type AS 产品类型
 FROM orders o,order_details d,products p
 where o.order_id=d.order_id
 and d.product_name=p.product_name
-- ![](./4.png)
+![](./4.png)
 5.查询出所有空订单，即没有订单详单的订单。
 - select * 
 from orders
 where order_id NOT in(SELECT o.order_id from orders o,order_details d WHERE o.order_id=d.order_id)
-- ![](./5.png)
+![](./5.png)
 6.查询部门表，同时显示部门的负责人姓名。
 - select d.*,e.name
 from departments d,employees e
 where d.department_id=e.department_id
 and e.manager_id=d.department_id
-- ![](./6.png)
+![](./6.png)
 7.查询部门表，统计每个部门的销售总金额。
 - select d.department_name,sum(sum1)
 from (
@@ -62,7 +62,7 @@ and o.employee_id = e.employee_id
 and o.order_id=d.order_id
 ),departments d
 group by d.department_name
-- ![](./7.png)
+![](./7.png)
 
 ### 表结构
 
